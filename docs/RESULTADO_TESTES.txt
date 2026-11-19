@@ -1,0 +1,6 @@
++Comando: python3 -m pytest -q
+Ambiente: Linux / Python 3.12.14 / 11-11-2026
+
+..........................................                               [100%]
+42 passed in 1.40s
+

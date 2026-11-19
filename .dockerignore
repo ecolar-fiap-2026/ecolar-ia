@@ -1,0 +1,15 @@
+.git
+.venv
+.vscode
+__pycache__
+**/__pycache__
+.pytest_cache
+.ipynb_checkpoints
+.env
+.env.*
+*.log
+dados
+docs
+notebooks
+resultados
+tests

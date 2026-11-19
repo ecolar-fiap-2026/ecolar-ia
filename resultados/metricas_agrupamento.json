@@ -1,0 +1,57 @@
+{
+  "modelo": "StandardScaler + KMeans",
+  "versao": "ecolar-ia-1.0",
+  "k_escolhido": 2,
+  "semanas_treino": 110,
+  "semanas_teste": 28,
+  "periodo_treino": [
+    "2007-01-01",
+    "2010-02-28"
+  ],
+  "periodo_teste": [
+    "2010-03-01",
+    "2010-11-21"
+  ],
+  "candidatos_treino": [
+    {
+      "k": 2,
+      "silhouette": 0.4302180992424814,
+      "davies_bouldin": 0.8355271333880103
+    },
+    {
+      "k": 3,
+      "silhouette": 0.3680147860323782,
+      "davies_bouldin": 0.9417179343102076
+    },
+    {
+      "k": 4,
+      "silhouette": 0.3635032334339055,
+      "davies_bouldin": 0.8793611466479678
+    },
+    {
+      "k": 5,
+      "silhouette": 0.3306714719242843,
+      "davies_bouldin": 0.9282457736591028
+    }
+  ],
+  "qualidade_teste": {
+    "silhouette": 0.24379015958105033,
+    "davies_bouldin": 1.0212451427278688
+  },
+  "grupos": {
+    "0": {
+      "nome": "Menor intensidade relativa (1/2)",
+      "media_diaria_treino_kwh": 19.34705428568857,
+      "semanas_treino": 50,
+      "interpretacao": "Comparação com semanas da casa de referência; não identifica desperdício nem causa."
+    },
+    "1": {
+      "nome": "Maior intensidade relativa (2/2)",
+      "media_diaria_treino_kwh": 32.09947404761429,
+      "semanas_treino": 60,
+      "interpretacao": "Comparação com semanas da casa de referência; não identifica desperdício nem causa."
+    }
+  },
+  "metodo": "Semanas segunda-domingo sem sobreposição. Corte cronológico 80/20. Escala e KMeans ajustados só no treino; k por silhouette do treino, teste descritivo separado.",
+  "limite": "Agrupamento exploratório sem rótulo verdadeiro; silhouette não é acurácia. Uma casa não representa a população."
+}

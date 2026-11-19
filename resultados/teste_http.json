@@ -1,0 +1,64 @@
+{
+  "metodo": "Servidor Werkzeug temporário e urllib via loopback TCP real",
+  "resultados": [
+    {
+      "rota": "/",
+      "status": 200,
+      "resposta": {
+        "pagina_teste": true
+      }
+    },
+    {
+      "rota": "/health",
+      "status": 200,
+      "resposta": {
+        "mensagem": null,
+        "modelos": [
+          "previsao",
+          "agrupamento"
+        ],
+        "status": "ok",
+        "versao": "ecolar-ia-1.0"
+      }
+    },
+    {
+      "rota": "/prever",
+      "status": 200,
+      "resposta": {
+        "avisos": [
+          "Modelo demonstrativo treinado em uma casa francesa (2006-2010), sem validação em residências brasileiras. Não garante economia."
+        ],
+        "consumo_previsto_kwh": 28.01,
+        "data_alvo": "2010-03-08",
+        "data_referencia": "2010-03-07",
+        "modelo": "ecolar-ia-1.0/random-forest",
+        "origem": "MODELO"
+      }
+    },
+    {
+      "rota": "/agrupar",
+      "status": 200,
+      "resposta": {
+        "avisos": [
+          "Modelo demonstrativo treinado em uma casa francesa (2006-2010), sem validação em residências brasileiras. Não garante economia."
+        ],
+        "data_fim": "2010-03-07",
+        "data_inicio": "2010-03-01",
+        "grupo": 0,
+        "interpretacao": "Comparação com semanas da casa de referência; não identifica desperdício nem causa.",
+        "media_janela_kwh": 16.632,
+        "modelo": "ecolar-ia-1.0/kmeans",
+        "nome": "Menor intensidade relativa (1/2)",
+        "origem": "MODELO"
+      }
+    },
+    {
+      "rota": "/prever (histórico vazio)",
+      "status": 400,
+      "resposta": {
+        "erro": "entrada_invalida",
+        "mensagem": "O histórico precisa ter exatamente sete dias consecutivos."
+      }
+    }
+  ]
+}

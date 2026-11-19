@@ -1,0 +1,8 @@
++Revisão do ZIP e dos modelos exportados por Yan no Windows.
+Verificação: Linux / Python 3.12.14 / 11-11-2026
+Comando: python3 -m pytest -q
+Nenhum modelo retreinado nesta revisão.
+
+..........................................                               [100%]
+42 passed in 1.78s
+

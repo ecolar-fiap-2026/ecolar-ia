@@ -1,0 +1,22 @@
+FIAP — Global Solution 2026/2 — CitizenTech
+Disciplina: Artificial Intelligence & Chatbot
+Solução: EcoLar — eficiência energética residencial
+Turma: 1TDSPV
+
+Yan Almeida — RM568814
+Vinicius Pacheco Ruiz — RM571109
+Diego Barbosa — RM568829
+
+Identificação reproduzida dos arquivos do grupo; conferir nomes oficiais e turma antes do envio.
+Versão do projeto: ecolar-ia-1.0 — 11/11/2026.
+
+Dois modelos: RandomForestRegressor (próximo dia) e StandardScaler + KMeans
+(agrupamento de semanas). API REST Flask carregando os modelos pré-treinados.
+Dados derivados da UCI incluídos, com fonte e licença em dados/fonte.json.
+
+Início: LEIA_PRIMEIRO.md. Windows: CONFIGURAR_WINDOWS.bat e INICIAR_API_WINDOWS.bat.
+Não requer Oracle para testar os modelos; integração com Java/Oracle ainda precisa
+ser implementada e testada no back-end do grupo, conforme docs/INTEGRACAO_JAVA_ORACLE.md.
+
+Uso de IA declarado em docs/USO_DE_IA.md. O grupo deve executar, revisar e compreender
+os arquivos antes de apresentar; Yan executou e validou a operação local no Windows em 11/11/2026. O domínio técnico e a revisão do conteúdo por todos os integrantes continuam necessários.

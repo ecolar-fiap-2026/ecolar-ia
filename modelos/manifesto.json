@@ -1,0 +1,22 @@
+{
+  "versao": "ecolar-ia-1.0",
+  "python": "3.12.10",
+  "pacotes": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "Flask": "3.1.2",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2",
+    "ipykernel": "6.30.1",
+    "pytest": "8.4.2"
+  },
+  "sha256_modelos": {
+    "agrupamento.joblib": "303145acc75ce1282e9a5ded3f65946ab2fb418fe274a4d2a6ece0526cfb897a",
+    "previsao.joblib": "4aa2c8488fdc8fc432d65f527cf26577e2b6d8a8df4fca1905e018c15068169a"
+  },
+  "ambiente_testado": "Windows"
+}

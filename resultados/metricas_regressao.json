@@ -1,0 +1,67 @@
+{
+  "modelo": "RandomForestRegressor",
+  "unidade": "kWh/dia",
+  "versao": "ecolar-ia-1.0",
+  "amostras": 909,
+  "amostras_treino_final": 727,
+  "amostras_teste": 182,
+  "selecao_hiperparametros": [
+    {
+      "max_depth": 4,
+      "min_samples_leaf": 5,
+      "mae_validacao_kwh": 4.950292988221293
+    },
+    {
+      "max_depth": 8,
+      "min_samples_leaf": 5,
+      "mae_validacao_kwh": 4.925107614507619
+    },
+    {
+      "max_depth": null,
+      "min_samples_leaf": 5,
+      "mae_validacao_kwh": 4.957638316402213
+    },
+    {
+      "max_depth": 8,
+      "min_samples_leaf": 10,
+      "mae_validacao_kwh": 4.880911419002716
+    }
+  ],
+  "parametros_escolhidos": {
+    "max_depth": 8,
+    "min_samples_leaf": 10,
+    "mae_validacao_kwh": 4.880911419002716
+  },
+  "periodo_treino": [
+    "2006-12-29",
+    "2010-03-07"
+  ],
+  "periodo_teste": [
+    "2010-03-08",
+    "2010-11-25"
+  ],
+  "teste_modelo": {
+    "mae_kwh": 3.8938060624884767,
+    "rmse_kwh": 5.293890377283129,
+    "r2": 0.4843773252963305
+  },
+  "teste_baselines": {
+    "ultimo_dia": {
+      "mae_kwh": 4.552388278445056,
+      "rmse_kwh": 6.47343768766377,
+      "r2": 0.22900410938629057
+    },
+    "mesmo_dia_semana_anterior": {
+      "mae_kwh": 5.488250000010988,
+      "rmse_kwh": 7.414217055655903,
+      "r2": -0.011376158597272257
+    },
+    "media_7_dias": {
+      "mae_kwh": 3.8807697017394034,
+      "rmse_kwh": 5.457463381451296,
+      "r2": 0.45202117072853976
+    }
+  },
+  "metodo": "Holdout cronológico 80/20. Hiperparâmetros selecionados em holdout interno 80/20 do desenvolvimento. Teste final nunca entra no fit.",
+  "limite": "Teste em período posterior da mesma casa; não mede desempenho em outras casas ou no Brasil."
+}

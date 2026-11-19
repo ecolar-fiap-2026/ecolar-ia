@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoLar · Teste da IA</title>
+<style>
+body{font:17px system-ui,sans-serif;color:#173c35;background:#f3f7f4;margin:0}main{max-width:850px;margin:45px auto;padding:24px}h1{font-size:38px;margin-bottom:8px}p{line-height:1.6}label{font-weight:650;display:block;margin:24px 0 8px}textarea{width:100%;box-sizing:border-box;min-height:310px;padding:16px;border:1px solid #94ada2;border-radius:8px;font:15px monospace}button{background:#165e4c;color:white;border:0;border-radius:6px;padding:13px 19px;font:inherit;cursor:pointer;margin:14px 8px 4px 0}button:disabled{opacity:.5}button:focus-visible,textarea:focus-visible{outline:3px solid #d48d1e;outline-offset:3px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:white;border:1px solid #d0ded6;padding:18px;border-radius:8px;font:14px monospace}.nota{font-size:14px;color:#466057}a{color:#165e4c}
+</style>
+<main><p>ECOLAR / INTELIGÊNCIA ARTIFICIAL</p><h1>Teste os dois modelos</h1>
+<p>Informe sete dias consecutivos de consumo em kWh, do mais antigo ao mais recente. A previsão estima o próximo dia; o agrupamento compara o padrão da semana.</p>
+<p class="nota">Demonstração acadêmica baseada em uma residência francesa. Sem validação no Brasil ou garantia de economia. Os números do exemplo abaixo são reais da base UCI de teste, não de uma casa brasileira.</p>
+<label for="entrada">Histórico em JSON</label><textarea id="entrada" spellcheck="false">{{ exemplo | tojson(indent=2) }}</textarea>
+<div><button type="button" data-rota="prever">Prever próximo dia</button><button type="button" data-rota="agrupar">Analisar padrão</button></div>
+<h2>Resultado</h2><pre id="resultado" aria-live="polite">Escolha uma análise.</pre>
+<p class="nota">Esta página testa a API local. A integração com Java e Oracle tem seu contrato explicado em docs/INTEGRACAO_JAVA_ORACLE.md.</p>
+</main><script>
+const saida=document.getElementById('resultado');
+document.querySelectorAll('button').forEach(botao=>botao.addEventListener('click',async()=>{
+  const botoes=document.querySelectorAll('button');
+  try{
+    const corpo=JSON.parse(document.getElementById('entrada').value);
+    botoes.forEach(b=>b.disabled=true);saida.textContent='Calculando...';
+    const r=await fetch('/'+botao.dataset.rota,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(corpo)});
+    const dados=await r.json();saida.textContent='HTTP '+r.status+'\n'+JSON.stringify(dados,null,2);
+  }catch(e){saida.textContent='Não foi possível concluir. Confira o JSON e se a API está aberta. '+e.message;}
+  finally{botoes.forEach(b=>b.disabled=false);}
+}));
+</script></html>
